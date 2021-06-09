@@ -6,8 +6,9 @@ class CalculatorBrain {
   final int weight;
 
   double _bmi;
+
   String calculateBMI() {
-    double _bmi = weight / pow(height / 100, 2);
+    _bmi = weight / pow(height / 100, 2);
     return _bmi.toStringAsFixed(1);
   }
 
@@ -16,8 +17,9 @@ class CalculatorBrain {
       return 'OverWeight';
     } else if (_bmi > 18.5) {
       return 'Normal';
-    } else
+    } else {
       return 'UnderWeight';
+    }
   }
 
   String getAdvice() {
@@ -25,7 +27,8 @@ class CalculatorBrain {
       return 'You need to do Exercise';
     } else if (_bmi > 18.5) {
       return 'Just go as it is going';
-    } else
-      return 'You need to eat less and do excercise';
+    } else {
+      return 'You need to eat more and get fat';
+    }
   }
 }
